@@ -8,10 +8,13 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "jj", "<ESC>")
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+
+-- Sneak --
+keymap.set("n", "b", "<Plug>Sneak_S")
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
@@ -56,3 +59,23 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- Buffers
+keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")
+keymap.set("n", "<leader>a", ":w <bar> %bd <bar> e# <bar> bd# <CR>")
+keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")
+keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
+keymap.set("n", "<S-A-h>", "<cmd>BufferLineMovePrev<cr>")
+keymap.set("n", "<S-A-l>", "<cmd>BufferLineMoveNext<cr>")
+keymap.set("n", "<leader>be", "<cmd>BufferLineSortByExtension<cr>")
+keymap.set("n", "<leader>bd", "<cmd>BufferLineSortByDirectory<cr>")
+keymap.set("n", "<leader>q", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>")
+keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>")
+keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>")
+keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>")
+keymap.set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>")
+keymap.set("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>")
+keymap.set("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>")
+keymap.set("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>")
+keymap.set("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>")
+keymap.set("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<CR>")
