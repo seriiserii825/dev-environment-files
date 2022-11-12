@@ -70,6 +70,27 @@ typescript.setup({
   },
 })
 
+lspconfig["intelephense"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = { "intelephense", "--stdio" },
+  filetypes = { "php" },
+  settings = {
+    intelephense = {
+      files = {
+        maxSize = 1000000,
+      },
+      environment = {
+        includePaths = {
+          "/home/serii/Sites/wordpress",
+          "/home/serii/Sites/advanced-custom-fields-pro",
+          "/home/serii/Sites/woocommerce",
+        },
+      },
+    },
+  },
+})
+
 -- configure css server
 lspconfig["cssls"].setup({
   capabilities = capabilities,
